@@ -14,32 +14,31 @@ M = 2 * N
 initial_state = np.array([0]*(N+M))
 initial_state_vector = stateToVector(initial_state)
 
-# DENSE COEFFICIENTS
-#complex_numbers = np.random.normal(size=2**N) + 1j *  np.random.normal(size=2**N)
-#complex_numbers /= np.linalg.norm(complex_numbers, ord=2)
-#coefficients = complex_numbers.tolist() # Modify this to insert the desired vector
+# DENSE DOMPLEX COEFFICIENTS
+complex_numbers = np.random.normal(size=2**N) + 1j *  np.random.normal(size=2**N)
+complex_numbers /= np.linalg.norm(complex_numbers, ord=2)
+coefficients = complex_numbers.tolist() # Modify this to insert the desired vector
 
+# DENSE REAL COEFFICIENTS
 #real_numbers = np.random.normal(size=2**N)
 #real_numbers /= np.linalg.norm(real_numbers, ord=2)
 #coefficients = real_numbers.tolist() # Modify this to insert the desired vector
 
-# SPARSE COEFFICIENTS
+# SPARSE COMPLEX COEFFICIENTS
 #complex_numbers = np.random.normal(size=2**N) + 1j *  np.random.normal(size=2**N)
-num_zeros = np.random.randint(1, 2**N)
-zero_indices = np.random.choice(2**N, num_zeros, replace=False)
+#num_zeros = np.random.randint(1, 2**N)
+#zero_indices = np.random.choice(2**N, num_zeros, replace=False)
 #complex_numbers[zero_indices] = 0
 #complex_numbers /= np.linalg.norm(complex_numbers, ord=2)
 #coefficients = complex_numbers.tolist() # Modify this to insert the desired vector
 
-real_numbers = np.random.normal(size=2**N)
-real_numbers[zero_indices] = 0
-real_numbers /= np.linalg.norm(real_numbers, ord=2)
-coefficients = real_numbers.tolist() # Modify this to insert the desired vector
-
-#coefficients = [sqrt(1/2), 0, 0, sqrt(1/2)]
-#coefficients = [0, 0, 0, sqrt(1/3), 0, sqrt(1/3), sqrt(1/3), 0]
-#coefficients = [sqrt(0.03),sqrt(0.07),sqrt(0.15),sqrt(0.05),sqrt(0.1),sqrt(0.3),sqrt(0.2),sqrt(0.1)]
-#coefficients = [0, 0, 0, 0, sqrt(1/6), 0, sqrt(1/6), sqrt(1/6), 0, 0, sqrt(1/6), sqrt(1/6), 0, sqrt(1/6), 0, 0]
+# SPARSE REAL COEFFICIENTS
+#num_zeros = np.random.randint(1, 2**N)
+#zero_indices = np.random.choice(2**N, num_zeros, replace=False)
+#real_numbers = np.random.normal(size=2**N)
+#real_numbers[zero_indices] = 0
+#real_numbers /= np.linalg.norm(real_numbers, ord=2)
+#coefficients = real_numbers.tolist() # Modify this to insert the desired vector
 
 print(f"Coefficients: {coefficients}")
 print(f"Modulo: {[np.sqrt(np.real(x)**2 + np.imag(x)**2) for x in coefficients]}")
@@ -105,10 +104,10 @@ for n in range(1, N+1):
 
 output_state = circuit.computeQuantumState(modulo=False)
 
-#print(f"\nQSP quantum state with global phases:\n{toKet([math.prod(global_phases) * x for x in output_state], N+M)}")
+print(f"\nQSP quantum state with global phases:\n{toKet([math.prod(global_phases) * x for x in output_state], N+M)}")
 
-print(f"\nOutput state (MODULO):")
-circuit.printCircuit(mode="ket", modulo=True)
+#print(f"\nOutput state (MODULO):")
+#circuit.printCircuit(mode="ket", modulo=True)
 
 #print(f"\nOutput state (without global phase):")
 #circuit.printCircuit(mode="ket", modulo=False)

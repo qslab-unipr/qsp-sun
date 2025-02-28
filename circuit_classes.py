@@ -1,6 +1,6 @@
 from utils import *
 from operator import add
-from math import floor, log2, sqrt
+from math import floor, log2
 import matplotlib.pyplot as plt
 import pennylane as qml
 
@@ -48,7 +48,7 @@ class GrayInitialStage(Stage):
         basis = [s[::-1] for s in compBasis(self._t)]
         strings = list(map(add, basis, binary)) # Strings in the first column have the last "(n − t)" bits at 0, and strings in each row share the same first "t" bits
 
-        # PHASE REGISTER INITIALIZATION (NON PARALLELIZZABILE!)
+        # PHASE REGISTER INITIALIZATION (NP!)
         for i, string in enumerate(strings):
             for j, bit in enumerate(string):
                 if bit == '1':
@@ -113,7 +113,7 @@ class GrayPathStage(Stage):
                 g2 = str("".join(map(str, gray_2[k + 1])))
                 curr.append(id + g1 if i < (len(basis) / 2) else id + g2)
 
-            # PHASE REGISTER INITIALIZATION (NON PARALLELIZZABILE!)
+            # PHASE REGISTER INITIALIZATION (NP!)
             for i, id in enumerate(basis):
                 curr_str = curr[i]
                 prev_str = prev[i]
@@ -261,7 +261,6 @@ class ControlGate(Stage):
     def circuit(self) -> list:
         U = np.matrix([[np.cos(self._angle),-np.sin(self._angle)],[np.sin(self._angle),np.cos(self._angle)]])
         qml.ControlledQubitUnitary(U, self._wire-1, self._wire, self._cw)
-        #qml.RY(2*self._angle, self._wire)
 
 class QuantumCircuit():
     def __init__(self, wires : int, state_vector : np.ndarray):
@@ -281,7 +280,6 @@ class QuantumCircuit():
         return qml.expval(qml.PauliZ(0))
     
     def circuitDisplay(self, state_vector : list, n : int):
-        #qml.BasisEmbedding(state_vector, range(n))
         qml.QubitStateVector(state_vector, range(n))
         for s in self._stages:
             s.circuit()
@@ -290,7 +288,6 @@ class QuantumCircuit():
     def circuitState(self, state_vector: list, n: int):
         @qml.qnode(self._device)
         def _circuit():
-            #qml.BasisEmbedding(state_vector, wires=range(n))
             qml.QubitStateVector(state_vector, range(n))
             for s in self._stages:
                 s.circuit()

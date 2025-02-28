@@ -1,4 +1,3 @@
-import math
 from circuit_classes import *
 import sys
 
@@ -7,7 +6,7 @@ sys.stdout = open('results/console_output', 'w') # Comment this to write on cons
 np.set_printoptions(precision=3, suppress=True, linewidth=100)
 
 # NUMER OF QUBITS
-N = 2
+N = 4
 M = 2 * N
 
 # INPUT STATES
@@ -18,8 +17,6 @@ initial_state_vector = stateToVector(initial_state)
 complex_numbers = np.random.normal(size=2**N) + 1j *  np.random.normal(size=2**N)
 complex_numbers /= np.linalg.norm(complex_numbers, ord=2)
 coefficients = complex_numbers.tolist() # Modify this to insert the desired vector
-
-#coefficients = [sqrt(0.03),sqrt(0.07),sqrt(0.15),sqrt(0.05),sqrt(0.1),sqrt(0.3),sqrt(0.2),sqrt(0.1)]
 
 print(f"Coefficients: {coefficients}")
 print("_"*50)

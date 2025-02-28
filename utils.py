@@ -107,10 +107,8 @@ def generateThetaVect(unit_vector : np.ndarray, n : int): # Generate the vector 
 
     binary_strings = encodeMultiplexor(np.array(['0']), n)
     binary_strings = sorted(binary_strings, key=len)
-    #print(f"Binatry strings for BST exploration: {binary_strings}")
 
     bst = generateBinTree(unit_vector, None, n)
-    #bst.printTree()
 
     for child_string in binary_strings:
         
@@ -118,13 +116,10 @@ def generateThetaVect(unit_vector : np.ndarray, n : int): # Generate the vector 
         child = bst.explore(child_string)
         parent = bst.explore(parent_string)
 
-        #print(child, parent)
-
         if parent == 0:
             theta = np.append(theta, acos(0))
         else:
             theta = np.append(theta, acos(child / parent))
-        
 
     return theta
 
@@ -171,15 +166,6 @@ def qspParameters(unit_vector : np.ndarray, n : int) -> tuple[list, list, list, 
 
     coefficient_matrix, angles, solution, variables, unused_variables = solve_system(unit_vector, n)
 
-    #print("\nMatrice dei coefficienti:")
-    #print(coefficient_matrix)
-    #print("\nVettore dei termini noti:")
-    #print(angles)
-    #print("\nSoluzione del sistema:")
-    #print(solution)
-    #print("\nVariabili:")
-    #print(variables)
-
     a = solution[0::3]
     b = solution[1::3]
     d = solution[2::3]
@@ -218,7 +204,6 @@ def qspParameters(unit_vector : np.ndarray, n : int) -> tuple[list, list, list, 
                 print(f"Angle for Rz(delta0) of UCG {k+1}: {delta0}")
                 ucg_0_angles.append(delta0)
 
-                
                 print("_"*50)
             case _:
 
@@ -269,7 +254,6 @@ def qspParameters(unit_vector : np.ndarray, n : int) -> tuple[list, list, list, 
                             suffix_alphas.append(alphas)
 
                     print("-"*50)
-
                 print("_"*50)
 
     return prefix_alphas, middle_alphas, suffix_alphas, ucg_0_angles, global_phases, lambda_diagonals
