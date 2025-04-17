@@ -19,7 +19,6 @@ coefficients = complex_numbers.tolist() # Modify this to insert the desired vect
 
 #### Quantum Circuit Implementation
 Every implemented circuit makes use of some derived classes from the abstract class *Stage*, to define the position of the gates and the values of some useful parameters, and to instantiate a _QuantumCircuit_ object that is basically a collection of stages and allows displaying the circuit and the quantum state in various ways using the **QuantumCircuit.printCircuit(_params_)** method.
-
 It is also possible to directly obtain the output state of the circuit by calling the **QuantumCircuit.computeQuantumState(_params_)** method or to display the circuit metadata using the **QuantumCircuit.getCircuitInfos()** method.
 
 #### Calculation of Parameters
@@ -27,5 +26,4 @@ Multiple functions are used to calculate the parameters needed to make all the n
 
 #### $\Lambda$ Circuit
 With the current implementation, it is possible to build the circuit for $\Lambda_n$, with $n$ as a variable, thanks to the adopted stage structure. 
-
 The actual script works by initializing the variable $n$ and then randomly generating the complex coefficient vector, whose values correspond to the probability amplitudes of the desired final quantum state. Then, the necessary angles are calculated from the initial vector and associated with each computational basis string. Finally, using the *Stage* classes, the quantum circuit is constructed and the final state - in this case, the values of the diagonal of the matrix associated with each multiplexor - can be retrieved.
