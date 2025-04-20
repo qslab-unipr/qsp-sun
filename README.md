@@ -4,13 +4,31 @@
 This repository contains all the files related to the implementation of Sun's Algorithm for the problem of quantum state preparation of an n-qubit quantum state, using $2n$ ancillary qubits, which is a particular subcase of the range presented in the first theorem of Sun et al. original paper. All modules have been developed in Python with the support of the PennyLane library, which enables quantum computing simulations. The repository includes various files containing classes and functions essential for the complete implementation:
 - **utils .py** Contains all the functions used to operate with vectors, print results, and compute parameters using traditional computing algorithms.
 - **circuit\_classes .py:** Contains all the classes used to generate the desired quantum circuit and to simulate quantum states.
-- **lambda\_n .py:** Contains a scalable implementation of the $\Lambda_n$ circuit described in the original paper. It uses an initial random complex vector and a variable $N$ that represents the number of qubits of the input register, but all parameters can be changed as a preference.
-- **quantum\_state\_preparation .py:** Contains the implementation of the whole quantum state preparation circuit, using a random complex vector as the desired final quantum state.
+- **lambda\_n .py:** Contains a scalable implementation of the $\Lambda_n$ circuit described in the original paper. It also contains a function to test the implementation by comparing the matrix associated with the circuit, with the theoretical matrix produced using algebric calculations.
+- **quantum\_state\_preparation .py:** Contains the initialization of the whole quantum state preparation circuit.
 - **phases\_linear\_system .py:** Contains all the functions needed to generate the coefficients related to the phases of the QSP.
 
 ## Requirements
-The project has been implemented using Python 3.12 (Python 3.10 or later should also work) and the latest version of the *PennyLane* library. The implementation also makes use of the *math*, *operator*, *numpy*, and *matplotlib.pyplot* modules, which should already be present in the latest version of Python.
+The project has been implemented using Python 3.12 (Python 3.10 or later should also work) and the latest version (0.38.0) of the *PennyLane* library. The implementation also makes use of the *math*, *operator*, *numpy*, and *matplotlib.pyplot* modules, which should already be present in the latest version of Python.
 
+## Functions & Methods
+- **qspParameters(unit_vector : np.ndarray, n : int):** Takes the parameter vector correspnding to the desire state and the number of qubits of the input register, and returns a tuple containing all the $/alpha$ angles, a list of global phases and the diagonal of the theoretical matrix associated to each $/Lambda$.
+- **qspCircuit(N : int, M : int, alphas : list, ucg_0_angles : list):** Takes the number of input and ancillary qubits and all the angles found following Sun's algorithm, and returns the circuit object of quantum state preparation.
+- **lambdaCircuit(N : int, M : int, alphas : list):** Takes the number of input and ancillary qubits for the desire $/Lambda$ and a list of $/alpha$ angles, and returns the circuit object of $/Lambda_n$.
+- **lambdaTest(N : int, M : int, circuit : 'QuantumCircuit', lambda_diagonals : list):** Takes the number of input and ancillary qubits for the desire $/Lambda$, the circuit of $/Lambda_n$ and the diagonal of the theoretical matrix associated to $/Lambda_n$, and print the comperison metrics between the theoretical matrix and the actual matrix associated to the circuit.
+#### Visualize the QSP circuit
+- **QuantumCircuit.printCircuit(mode : str, modulo : bool = False):** Accept different modes to visualize aspects of the circuit:
+  -- *"console"* : Output the circuit diagram on console
+  -- *"figure"* : Output an interactive plot of the circuit
+  -- *"ket"* : Print the output state in ket notation without the global phase
+  -- *"matrix"* : Save of a file the matrix representation of the circuit
+  -- *"state"* : Print the output quantum state
+- **QuantumCircuit.computeMatrix(modulo : bool = False):** Returns the matrix associated to the circuit
+- **QuantumCircuit.computeQuantumState(modulo : bool = False):** Run the simulation and returns the output state without global phase
+- **QuantumCircuit.getCircuitInfos():** Returns the informations relative to the circuit such as number of gates, depht, ecc.
+- **QuantumCircuit.printMetrics(self, vec1 : np.ndarray, vec2 : np.ndarray):** Calculate fidelity and trace distance
+- **QuantumCircuit.printMatrixComparison(self, mat1 : np.ndarray, mat2 : np.ndarray):** Calculate the mean squared error between two matrix
+  
 ## Usage
 To test the implementation, it is sufficient to run *"quantum\_state\_preparation.py"* to generate a desired random N-qubit quantum state. It is also possible to generate a specific, real or complex, N-qubit quantum state by modifying the *coefficients* variable with a $2^n$-element vector of $l_2$-norm = 1:
 ```bash
