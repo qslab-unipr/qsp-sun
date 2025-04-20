@@ -18,11 +18,11 @@ The project has been implemented using Python 3.12 (Python 3.10 or later should 
 - **lambdaTest(N : int, M : int, circuit : 'QuantumCircuit', lambda_diagonals : list):** Takes the number of input and ancillary qubits for the desire $\Lambda$, the circuit of $\Lambda_n$ and the diagonal of the theoretical matrix associated to $\Lambda_n$, and print the comperison metrics between the theoretical matrix and the actual matrix associated to the circuit.
 #### Visualize the QSP circuit
 - **QuantumCircuit.printCircuit(mode : str, modulo : bool = False):** Accept different modes to visualize aspects of the circuit:
-  -- *"console"* : Output the circuit diagram on console
-  -- *"figure"* : Output an interactive plot of the circuit
-  -- *"ket"* : Print the output state in ket notation without the global phase
-  -- *"matrix"* : Save of a file the matrix representation of the circuit
-  -- *"state"* : Print the output quantum state
+  - *"console"* : Output the circuit diagram on console
+  - *"figure"* : Output an interactive plot of the circuit
+  - *"ket"* : Print the output state in ket notation without the global phase
+  - *"matrix"* : Save of a file the matrix representation of the circuit
+  - *"state"* : Print the output quantum state
 - **QuantumCircuit.computeMatrix(modulo : bool = False):** Returns the matrix associated to the circuit
 - **QuantumCircuit.computeQuantumState(modulo : bool = False):** Run the simulation and returns the output state without global phase
 - **QuantumCircuit.getCircuitInfos():** Returns the informations relative to the circuit such as number of gates, depht, ecc.
