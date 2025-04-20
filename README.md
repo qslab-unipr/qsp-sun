@@ -12,10 +12,10 @@ This repository contains all the files related to the implementation of Sun's Al
 The project has been implemented using Python 3.12 (Python 3.10 or later should also work) and the latest version (0.38.0) of the *PennyLane* library. The implementation also makes use of the *math*, *operator*, *numpy*, and *matplotlib.pyplot* modules, which should already be present in the latest version of Python.
 
 ## Functions & Methods
-- **qspParameters(unit_vector : np.ndarray, n : int):** Takes the parameter vector correspnding to the desire state and the number of qubits of the input register, and returns a tuple containing all the $/alpha$ angles, a list of global phases and the diagonal of the theoretical matrix associated to each $/Lambda$.
+- **qspParameters(unit_vector : np.ndarray, n : int):** Takes the parameter vector correspnding to the desire state and the number of qubits of the input register, and returns a tuple containing all the $\alpha$ angles, a list of global phases and the diagonal of the theoretical matrix associated to each $\Lambda$.
 - **qspCircuit(N : int, M : int, alphas : list, ucg_0_angles : list):** Takes the number of input and ancillary qubits and all the angles found following Sun's algorithm, and returns the circuit object of quantum state preparation.
-- **lambdaCircuit(N : int, M : int, alphas : list):** Takes the number of input and ancillary qubits for the desire $/Lambda$ and a list of $/alpha$ angles, and returns the circuit object of $/Lambda_n$.
-- **lambdaTest(N : int, M : int, circuit : 'QuantumCircuit', lambda_diagonals : list):** Takes the number of input and ancillary qubits for the desire $/Lambda$, the circuit of $/Lambda_n$ and the diagonal of the theoretical matrix associated to $/Lambda_n$, and print the comperison metrics between the theoretical matrix and the actual matrix associated to the circuit.
+- **lambdaCircuit(N : int, M : int, alphas : list):** Takes the number of input and ancillary qubits for the desire $\Lambda$ and a list of $\alpha$ angles, and returns the circuit object of $\Lambda_n$.
+- **lambdaTest(N : int, M : int, circuit : 'QuantumCircuit', lambda_diagonals : list):** Takes the number of input and ancillary qubits for the desire $\Lambda$, the circuit of $\Lambda_n$ and the diagonal of the theoretical matrix associated to $\Lambda_n$, and print the comperison metrics between the theoretical matrix and the actual matrix associated to the circuit.
 #### Visualize the QSP circuit
 - **QuantumCircuit.printCircuit(mode : str, modulo : bool = False):** Accept different modes to visualize aspects of the circuit:
   -- *"console"* : Output the circuit diagram on console
