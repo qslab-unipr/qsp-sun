@@ -2,7 +2,7 @@
 
 ## Description
 This repository contains all the files related to the implementation of Sun's Algorithm for the problem of quantum state preparation of an n-qubit quantum state, using $2n$ ancillary qubits, which is a particular subcase of the range presented in the first theorem of Sun et al. original paper. All modules have been developed in Python with the support of the PennyLane library, which enables quantum computing simulations. The repository includes various files containing classes and functions essential for the complete implementation:
-- **utils .py** Contains all the functions used to operate with vectors, print results, and compute parameters using traditional computing algorithms.
+- **utils.py:** Contains all the functions used to operate with vectors, print results, and compute parameters using traditional computing algorithms.
 - **circuit\_classes .py:** Contains all the classes used to generate the desired quantum circuit and to simulate quantum states.
 - **lambda\_n .py:** Contains a scalable implementation of the $\Lambda_n$ circuit described in the original paper. It also contains a function to test the implementation by comparing the matrix associated with the circuit, with the theoretical matrix produced using algebric calculations.
 - **quantum\_state\_preparation .py:** Contains the initialization of the whole quantum state preparation circuit.
