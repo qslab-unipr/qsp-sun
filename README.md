@@ -3,10 +3,10 @@
 ## Description
 This repository contains all the files related to the implementation of Sun's Algorithm for the problem of quantum state preparation of an n-qubit quantum state, using $2n$ ancillary qubits, which is a particular subcase of the range presented in the first theorem of Sun et al. original paper. All modules have been developed in Python with the support of the PennyLane library, which enables quantum computing simulations. The repository includes various files containing classes and functions essential for the complete implementation:
 - **utils.py:** Contains all the functions used to operate with vectors, print results, and compute parameters using traditional computing algorithms.
-- **circuit\_classes .py:** Contains all the classes used to generate the desired quantum circuit and to simulate quantum states.
-- **lambda\_n .py:** Contains a scalable implementation of the $\Lambda_n$ circuit described in the original paper. It also contains a function to test the implementation by comparing the matrix associated with the circuit, with the theoretical matrix produced using algebric calculations.
-- **quantum\_state\_preparation .py:** Contains the initialization of the whole quantum state preparation circuit.
-- **phases\_linear\_system .py:** Contains all the functions needed to generate the coefficients related to the phases of the QSP.
+- **circuit\_classes.py:** Contains all the classes used to generate the desired quantum circuit and to simulate quantum states.
+- **lambda\_n.py:** Contains a scalable implementation of the $\Lambda_n$ circuit described in the original paper. It also contains a function to test the implementation by comparing the matrix associated with the circuit, with the theoretical matrix produced using algebric calculations.
+- **quantum\_state\_preparation.py:** Contains the initialization of the whole quantum state preparation circuit.
+- **phases\_linear\_system.py:** Contains all the functions needed to generate the coefficients related to the phases of the QSP.
 
 ## Requirements
 The project has been implemented using Python 3.12 (Python 3.10 or later should also work) and the latest version (0.38.0) of the *PennyLane* library. The implementation also makes use of the *math*, *operator*, *numpy*, and *matplotlib.pyplot* modules, which should already be present in the latest version of Python.
@@ -30,10 +30,31 @@ The project has been implemented using Python 3.12 (Python 3.10 or later should 
 - **QuantumCircuit.printMatrixComparison(self, mat1 : np.ndarray, mat2 : np.ndarray):** Calculate the mean squared error between two matrix
   
 ## Usage
-To test the implementation, it is sufficient to run *"quantum\_state\_preparation.py"* to generate a desired random N-qubit quantum state. It is also possible to generate a specific, real or complex, N-qubit quantum state by modifying the *coefficients* variable with a $2^n$-element vector of $l_2$-norm = 1:
+To test the implementation, it is sufficient to run *"main.py"* and follow the instructions printed on terminal console. It is possible to prepare a random , real or complex, N-qubit quantum state or a specific one by selecting a known quantum state or inserting a $2^n$-element vector of $l_2$-norm = 1.
+#### Random state exaple
 ```bash
-coefficients = complex_numbers.tolist() # Modify this to insert the desired vector
+Specific quantum state [s] or random vector [r]? > r
+Number of qubits? > 4
+Dense [d] or sparse [s] random state? > d
+Real [r] or complex [c] coefficients? > c
 ```
+#### Specific custom state exaple
+```bash
+Specific quantum state [s] or random vector [r]? > s
+Select a known quantum state or insert a custom one:
+1) Bell (n=2)
+2) GHZ (n=3)
+3) GHZ (n=4)
+4) W (n=3)
+5) W (n=4)
+6) Dicke (n=3)
+7) Dicke (n=4)
+8) Custom
+ > 8
+Number of qubits? > 2
+Insert real coefficients (floats) separated by spaces > 0.5 0.5 0.5 0.5
+```
+It is also possible to generate and test a single $\Lambda$ circuit by running *"lambda_test.py"* and inserting the nuber of desired input register qubits; plase note that, because the implementetion of the metrics relies on matrix operations, using a value of n greater than 3 could result in long waiting due to the necessity of large memory and high computational power.
 
 #### Quantum Circuit Implementation
 Every implemented circuit makes use of some derived classes from the abstract class *Stage*, to define the position of the gates and the values of some useful parameters, and to instantiate a _QuantumCircuit_ object that is basically a collection of stages and allows displaying the circuit and the quantum state in various ways using the **QuantumCircuit.printCircuit(_params_)** method.
