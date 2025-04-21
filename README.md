@@ -1,4 +1,4 @@
-# Sun's Algorithm Implementation
+# Sun's Algorithm Implementation (v1.0.0)
 
 ## Description
 This repository contains all the files related to the first known implementation of Sun's Algorithm for the problem of quantum state preparation of an n-qubit quantum state, using $2n$ ancillary qubits, which is a particular subcase of the range presented in the first theorem of Sun et al. original paper. All modules have been developed in Python with the support of the PennyLane library, which enables quantum computing simulations. The repository includes various files containing classes and functions essential for the complete implementation:
