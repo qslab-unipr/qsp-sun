@@ -1,7 +1,7 @@
 # Sun's Algorithm Implementation
 
 ## Description
-This repository contains all the files related to the implementation of Sun's Algorithm for the problem of quantum state preparation of an n-qubit quantum state, using $2n$ ancillary qubits, which is a particular subcase of the range presented in the first theorem of Sun et al. original paper. All modules have been developed in Python with the support of the PennyLane library, which enables quantum computing simulations. The repository includes various files containing classes and functions essential for the complete implementation:
+This repository contains all the files related to the first known implementation of Sun's Algorithm for the problem of quantum state preparation of an n-qubit quantum state, using $2n$ ancillary qubits, which is a particular subcase of the range presented in the first theorem of Sun et al. original paper. All modules have been developed in Python with the support of the PennyLane library, which enables quantum computing simulations. The repository includes various files containing classes and functions essential for the complete implementation:
 - **utils.py:** Contains all the functions used to operate with vectors, print results, and compute parameters using traditional computing algorithms.
 - **circuit\_classes.py:** Contains all the classes used to generate the desired quantum circuit and to simulate quantum states.
 - **lambda\_n.py:** Contains a scalable implementation of the $\Lambda_n$ circuit described in the original paper. It also contains a function to test the implementation by comparing the matrix associated with the circuit, with the theoretical matrix produced using algebric calculations.
@@ -9,7 +9,7 @@ This repository contains all the files related to the implementation of Sun's Al
 - **phases\_linear\_system.py:** Contains all the functions needed to generate the coefficients related to the phases of the QSP.
 
 ## Requirements
-The project has been implemented using Python 3.12 (Python 3.10 or later should also work) and the latest version (0.38.0) of the *PennyLane* library. The implementation also makes use of the *math*, *operator*, *numpy*, and *matplotlib.pyplot* modules, which should already be present in the latest version of Python.
+The project has been implemented using Python 3.12 (Python 3.10 or later should also work) and the latest version (0.38.0) of the *PennyLane* library. The implementation also makes use of the *math*, *operator*, *numpy*, and *matplotlib* modules, which should already be present in the latest version of Python.
 
 ## Functions & Methods
 - **qspParameters(unit_vector : np.ndarray, n : int):** Takes the parameter vector correspnding to the desire state and the number of qubits of the input register, and returns a tuple containing all the $\alpha$ angles, a list of global phases and the diagonal of the theoretical matrix associated to each $\Lambda$.
