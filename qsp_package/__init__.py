@@ -8,7 +8,7 @@ Version: 1.0.0
 
 __version__ = "1.0.0"
 
-from .quantum_state_preparation import qspCircuit
+from .quantum_state_preparation import qspCircuit, qspCircuitReduced
 from .lambda_n import lambdaCircuit, lambdaTest
 from .utils import qspParameters, toKet, stateToVector
 
