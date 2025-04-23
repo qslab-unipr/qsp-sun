@@ -14,7 +14,7 @@ More details about the folder *"qsp_package"*:
 - **utils.py** contains all the functions used to operate with vectors, print results, and compute parameters using traditional computing algorithms.
 - **circuit\_classes.py** contains all the classes used to generate the desired quantum circuit and to simulate quantum states.
 - **lambda\_n.py** contains a scalable implementation of the $\Lambda_n$ circuit described in the original paper. It also contains a function to test the implementation by comparing the matrix associated to the circuit with the theoretical matrix produced using algebric calculations.
-- **quantum\_state\_preparation.py** contains the initialization of the whole QSP circuit.
+- **quantum\_state\_preparation.py** contains the initialization of the whole QSP circuit in the reduced and expanded versions.
 - **phases\_linear\_system.py** contains all the functions needed to generate the classical parameters related to the parallelized phases of the QSP circuit.
 
 ## Requirements
@@ -23,6 +23,7 @@ The project has been implemented using Python 3.12 (Python 3.10 or later should 
 ## Functions & Methods
 - **qspParameters(unit_vector : np.ndarray, n : int):** takes the parameter vector corresponding to the desire quantum state (normalized) and the number of qubits of the input register, and returns a tuple containing all the $\alpha$ angles (phase shifts parameters), a list of global phases (derived from the construction of the matrices $\Lambda_n$) and the diagonal elements of the matrix associated to each matrix $\Lambda_n$.
 - **qspCircuit(N : int, M : int, alphas : list, ucg_0_angles : list):** takes the number of input and ancillary qubits and all the phase shifts found following the stages of Sun et al.'s algorithm, and returns the QSP circuit object.
+- **qspCircuitReduced(N : int, M : int, alphas : list, ucg_0_angle : float):** takes the number of input and ancillary qubits and all the phase shifts of the central $\Lambda$ found following the stages of Sun et al.'s algorithm, and returns the reduced QSP circuit object.
 - **lambdaCircuit(N : int, M : int, alphas : list):** takes the number of input and ancillary qubits for the desire operator $\Lambda_n$ and a list of the corresponding phase shifts, and returns the $\Lambda_n$ circuit object.
 - **lambdaTest(N : int, M : int, circuit : 'QuantumCircuit', lambda_diagonals : list):** takes the number of input and ancillary qubits for the desire operator $\Lambda_n$, the circuit associated to $\Lambda_n$ and the diagonal of the theoretical matrix associated to $\Lambda_n$, and print the comparison metrics between the theoretical matrix and the actual matrix associated to the circuit.
 #### Visualize the QSP circuit
@@ -39,13 +40,14 @@ The project has been implemented using Python 3.12 (Python 3.10 or later should 
 - **QuantumCircuit.printMatrixComparison(self, mat1 : np.ndarray, mat2 : np.ndarray):** calculates the mean squared error between two matrix
   
 ## Usage
-To test the implementation, it is sufficient to run *"main.py"* and follow the instructions printed on terminal console. It is possible to prepare a random , real or complex, N-qubit quantum state or a specific state by selecting a known quantum state or inserting a $2^n$-element vector of $l_2$-norm = 1.
+To test the implementation, it is sufficient to run *"main.py"* and follow the instructions printed on the terminal console. It is possible to prepare a random, real positive, real negative or complex, N-qubit quantum state or a specific state by selecting a known quantum state or inserting a $2^n$-element vector of $l_2$-norm = 1.
+The script will automatically select the simplest version of the circuit (expanded or reduced) based on the input coefficients vector.
 #### Random state example
 ```bash
 Specific quantum state [s] or random vector [r]? > r
 Number of qubits? > 4
 Dense [d] or sparse [s] random state? > d
-Real [r] or complex [c] coefficients? > c
+Real positive [p], real negative [n] or complex [c] coefficients? > c
 ```
 #### Specific custom state example
 ```bash
@@ -67,11 +69,12 @@ It is also possible to generate and test a single $\Lambda_n$ circuit by running
 
 #### Quantum Circuit Implementation
 Every implemented QSP circuit makes use of some derived classes from the abstract class *Stage*, to define the position of the gates and the values of some useful parameters, and to instantiate a _QuantumCircuit_ object that is basically a collection of stages and allows displaying the circuit and the quantum state in various ways using the **QuantumCircuit.printCircuit(_params_)** method.
-It is also possible to directly obtain the output state of the circuit by calling the **QuantumCircuit.computeQuantumState(_params_)** method or to display the circuit metadata using the **QuantumCircuit.getCircuitInfos()** method.
+It is also possible to directly obtain the output state of the circuit by calling the **QuantumCircuit.computeQuantumState(_params_)** method or to display the circuit metadata using the **QuantumCircuit.getCircuitInfos()** method, as shown in the previous section.
 
 #### Calculation of Parameters
 Multiple functions are used to calculate the parameters needed to make all the necessary (parallelized) phase shifts in the computational basis; this process is done using traditional computation and can therefore be executed separately from the quantum computation part. A user can simply call the **qspParameters(_coeff\_vector_, _num\_of\_qubits_)** function to generate $3*(2^n-1)$ $\alpha$ angles (phase shifts parameters) from the desired coefficient vector; these latter angles are then split between the 3 matrices $\Lambda_n$ used to implement (according to the decomposition explained in the original paper by Sun et al.) each $UCG_n$ of the whole traditional QSP ladder structure.
+This procedure also generates the list of global phases and the thoretical matrices used to verify the correct implementation of the $\Lambda_n$ circuit.
 
 #### $\Lambda$ Circuit
 With the current implementation, it is possible to build the circuit associated to the operator $\Lambda_n$, with $n$ as a variable, thanks to the adopted stage structure. 
-The actual script works by initializing the variable $n$ and then randomly generating the complex coefficient vector, whose values correspond to the probability amplitudes of the desired final quantum state. Then, the necessary angles are calculated from the initial vector and associated with each computational basis string. Finally, using the *Stage* classes, the quantum circuit is constructed and the final state - in this case, the values of the diagonal of the matrix associated with each multiplexor - can be retrieved.
+The actual script works by initializing the variable $n$ and then randomly generating a complex dense coefficient vector, whose values correspond to the probability amplitudes of the desired final quantum state. Then, the necessary angles are calculated from the initial vector and associated with each computational basis string. Finally, using the *Stage* classes, the quantum circuit is constructed and the final state - in this case, the values of the diagonal of the matrix associated with each multiplexor - can be retrieved.
