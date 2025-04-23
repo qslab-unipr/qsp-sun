@@ -4,7 +4,7 @@ import math
 import time
 import numpy as np
 
-from qsp_package import __doc__, qspCircuit, qspParameters, toKet, stateToVector
+from qsp_package import __doc__, qspCircuit, qspCircuitReduced, qspParameters, toKet, stateToVector
 print(__doc__)
 
 np.set_printoptions(precision=3, suppress=True, linewidth=100)
@@ -59,35 +59,35 @@ try:
 
             match input("Dense [d] or sparse [s] random state? > ").strip().lower():
                 case 'd':
-                    match input("Real [r] or complex [c] coefficients? > ").strip().lower():
-                        case 'r':
-                            real_numbers = np.random.normal(size=2**N)
-                            real_numbers /= np.linalg.norm(real_numbers, ord=2)
-                            coefficients = real_numbers.tolist()
+                    match input("Real positive [p], real negative [n] or complex [c] coefficients? > ").strip().lower():
+                        case 'p':
+                            numbers = np.abs(np.random.normal(size=2**N))
+                        case 'n':
+                            numbers = np.random.normal(size=2**N)
                         case 'c':
-                            complex_numbers = np.random.normal(size=2**N) + 1j *  np.random.normal(size=2**N)
-                            complex_numbers /= np.linalg.norm(complex_numbers, ord=2)
-                            coefficients = complex_numbers.tolist()
+                            numbers = np.random.normal(size=2**N) + 1j *  np.random.normal(size=2**N)
                         case _:
                             raise Exception("Invalid input!")
+                        
+                    numbers /= np.linalg.norm(numbers, ord=2)
+                    coefficients = numbers.tolist()
+                    
                 case 's':
-                    match input("Real [r] or complex [c] coefficients? > ").strip().lower():
-                        case 'r':
-                            num_zeros = np.random.randint(1, 2**N)
-                            zero_indices = np.random.choice(2**N, num_zeros, replace=False)
-                            real_numbers = np.random.normal(size=2**N)
-                            real_numbers[zero_indices] = 0
-                            real_numbers /= np.linalg.norm(real_numbers, ord=2)
-                            coefficients = real_numbers.tolist()
+                    match input("Real positive [p], real negative [n] or complex [c] coefficients? > ").strip().lower():
+                        case 'p':
+                            numbers = np.abs(np.random.normal(size=2**N))
+                        case 'n':
+                            numbers = np.random.normal(size=2**N)
                         case 'c':
-                            complex_numbers = np.random.normal(size=2**N) + 1j *  np.random.normal(size=2**N)
-                            num_zeros = np.random.randint(1, 2**N)
-                            zero_indices = np.random.choice(2**N, num_zeros, replace=False)
-                            complex_numbers[zero_indices] = 0
-                            complex_numbers /= np.linalg.norm(complex_numbers, ord=2)
-                            coefficients = complex_numbers.tolist()
+                            numbers = np.random.normal(size=2**N) + 1j *  np.random.normal(size=2**N)
                         case _:
                             raise Exception("Invalid input!")
+                    
+                    zero_indices = np.random.choice(2**N, np.random.randint(1, 2**N), replace=False)
+                    numbers[zero_indices] = 0
+                    numbers /= np.linalg.norm(numbers, ord=2)
+                    coefficients = numbers.tolist()
+
                 case _:
                     raise Exception("Invalid input!")
         case _:
@@ -113,8 +113,8 @@ alphas = [prefix_alphas, middle_alphas, suffix_alphas]
 
 param_end_time = time.perf_counter() # END PARAMETERS GENERATION
 
-# QSP CIRCUIT
-circuit = qspCircuit(N, M, alphas, ucg_0_angles)
+# QSP CIRCUIT (REDUCED OR EXTENDED)
+circuit = qspCircuitReduced(N, M, middle_alphas, ucg_0_angles[1]) if all([True if x == 0 else False for x in np.angle(coefficients)]) else qspCircuit(N, M, alphas, ucg_0_angles)
 
 circ_start_time = time.perf_counter() # START QUANTUM COMPUTATION
 
