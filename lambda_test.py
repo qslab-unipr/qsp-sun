@@ -17,7 +17,7 @@ M = 2 * N
 
 sys.stdout = open(result_path + 'lambda_test.txt', 'w', encoding='utf-8')
 
-# RANDOM DENS COMPLEX COEFFICIENTS
+# RANDOM DENSE COMPLEX COEFFICIENTS
 complex_numbers = np.random.normal(size=2**N) + 1j *  np.random.normal(size=2**N)
 complex_numbers /= np.linalg.norm(complex_numbers, ord=2)
 coefficients = complex_numbers.tolist()
