@@ -1,0 +1,211 @@
+----- TESTS FOR N=4 SPARSE -----
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 5.993055529589692e-16
+Time taken to generate parameters: 0.013342894148081541s.
+Time taken to execute the circuit: 0.04668787796981633s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 4.440892098500628e-16
+Time taken to generate parameters: 0.011489639058709145s.
+Time taken to execute the circuit: 0.030922156991437078s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999982
+
+Trace distance: 7.216449660063518e-16
+Time taken to generate parameters: 0.009138457011431456s.
+Time taken to execute the circuit: 0.030681754928082228s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 5.828670879282072e-16
+Time taken to generate parameters: 0.009258222067728639s.
+Time taken to execute the circuit: 0.03045759303495288s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999987
+
+Trace distance: 8.777700788442642e-16
+Time taken to generate parameters: 0.0069495500065386295s.
+Time taken to execute the circuit: 0.018861083080992103s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 4.718447854656915e-16
+Time taken to generate parameters: 0.005706333089619875s.
+Time taken to execute the circuit: 0.01902543194591999s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999984
+
+Trace distance: 8.881784197001248e-16
+Time taken to generate parameters: 0.005692606093361974s.
+Time taken to execute the circuit: 0.01889001694507897s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 4.440892098500625e-16
+Time taken to generate parameters: 0.00564376381225884s.
+Time taken to execute the circuit: 0.08807198097929358s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 5.273559366969496e-16
+Time taken to generate parameters: 0.005819363985210657s.
+Time taken to execute the circuit: 0.01913919602520764s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 4.718447854656915e-16
+Time taken to generate parameters: 0.005682016955688596s.
+Time taken to execute the circuit: 0.018887351965531707s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 6.106226635438361e-16
+Time taken to generate parameters: 0.005708836950361729s.
+Time taken to execute the circuit: 0.01879528909921646s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999987
+
+Trace distance: 6.38378239159465e-16
+Time taken to generate parameters: 0.005663410993292928s.
+Time taken to execute the circuit: 0.018860691925510764s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999984
+
+Trace distance: 7.216449660063518e-16
+Time taken to generate parameters: 0.005706583149731159s.
+Time taken to execute the circuit: 0.0189340200740844s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 4.718447854656913e-16
+Time taken to generate parameters: 0.005727763054892421s.
+Time taken to execute the circuit: 0.01888395589776337s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999993
+
+Trace distance: 3.828358248229502e-16
+Time taken to generate parameters: 0.005673128878697753s.
+Time taken to execute the circuit: 0.018845774000510573s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 5.551115123125783e-16
+Time taken to generate parameters: 0.005689901066944003s.
+Time taken to execute the circuit: 0.01884395000524819s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 5.551115123125783e-16
+Time taken to generate parameters: 0.005874288035556674s.
+Time taken to execute the circuit: 0.018864269135519862s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999987
+
+Trace distance: 6.38378239159465e-16
+Time taken to generate parameters: 0.00571265397593379s.
+Time taken to execute the circuit: 0.0190014170948416s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 7.216449660063518e-16
+Time taken to generate parameters: 0.005713135004043579s.
+Time taken to execute the circuit: 0.018893664004281163s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 4.440892098500626e-16
+Time taken to generate parameters: 0.0057088269386440516s.
+Time taken to execute the circuit: 0.018851525150239468s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 4.163336342344337e-16
+Time taken to generate parameters: 0.0056904819793999195s.
+Time taken to execute the circuit: 0.018852626904845238s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 5.273559366969496e-16
+Time taken to generate parameters: 0.0056927260011434555s.
+Time taken to execute the circuit: 0.02205258491449058s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 5.273559366969494e-16
+Time taken to generate parameters: 0.005790289957076311s.
+Time taken to execute the circuit: 0.01885742601007223s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 6.106226635438363e-16
+Time taken to generate parameters: 0.005727241979911923s.
+Time taken to execute the circuit: 0.018900597002357244s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 5.725345998792918e-15
+Time taken to generate parameters: 0.005672428058460355s.
+Time taken to execute the circuit: 0.018834291957318783s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 6.591949208711867e-16
+Time taken to generate parameters: 0.005752598866820335s.
+Time taken to execute the circuit: 0.018892270978540182s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999987
+
+Trace distance: 7.494005416219807e-16
+Time taken to generate parameters: 0.005679390858858824s.
+Time taken to execute the circuit: 0.018899716204032302s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 4.024558464266192e-16
+Time taken to generate parameters: 0.005698357010260224s.
+Time taken to execute the circuit: 0.01884686597622931s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 5.689893001203927e-16
+Time taken to generate parameters: 0.005660997005179524s.
+Time taken to execute the circuit: 0.01885478082112968s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999991
+
+Trace distance: 6.800116025829084e-16
+Time taken to generate parameters: 0.005717673106119037s.
+Time taken to execute the circuit: 0.018890578066930175s.
+--------------------------------------------------

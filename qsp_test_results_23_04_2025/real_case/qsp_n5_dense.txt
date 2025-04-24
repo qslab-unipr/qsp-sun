@@ -1,0 +1,80 @@
+----- TESTS FOR N=5 DENSE -----
+
+Fidelity: 0.9999999999999987
+
+Trace distance: 6.938893903907228e-16
+Time taken to generate parameters: 0.042839039117097855s.
+Time taken to execute the circuit: 0.09693146124482155s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 8.326672684688672e-16
+Time taken to generate parameters: 0.024588335305452347s.
+Time taken to execute the circuit: 0.041741788387298584s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 5.273559366969494e-16
+Time taken to generate parameters: 0.019893284887075424s.
+Time taken to execute the circuit: 0.041908904910087585s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999989
+
+Trace distance: 6.106226635438361e-16
+Time taken to generate parameters: 0.020103465765714645s.
+Time taken to execute the circuit: 0.08969087526202202s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999987
+
+Trace distance: 6.938893903907228e-16
+Time taken to generate parameters: 0.0200863778591156s.
+Time taken to execute the circuit: 0.04205213114619255s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999984
+
+Trace distance: 9.159339953157541e-16
+Time taken to generate parameters: 0.019909720867872238s.
+Time taken to execute the circuit: 0.0421941801905632s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999987
+
+Trace distance: 9.490935771212426e-16
+Time taken to generate parameters: 0.02014060690999031s.
+Time taken to execute the circuit: 0.04204874485731125s.
+--------------------------------------------------
+
+Fidelity: 0.999999999999998
+
+Trace distance: 6.304564580805174e-16
+Time taken to generate parameters: 0.019862238317728043s.
+Time taken to execute the circuit: 0.04184568300843239s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999982
+
+Trace distance: 5.551115123125783e-16
+Time taken to generate parameters: 0.019971080124378204s.
+Time taken to execute the circuit: 0.041905056685209274s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999987
+
+Trace distance: 9.159339953157541e-16
+Time taken to generate parameters: 0.019939042627811432s.
+Time taken to execute the circuit: 0.04200984537601471s.
+--------------------------------------------------
+
+num_wires: 14
+num_gates: 263
+depth: 120
+shots: Shots(total=None)
+gate_types:
+{'RY': 1, 'Adjoint(S)': 4, 'Hadamard': 8, 'CNOT': 190, 'PhaseShift': 56, 'S': 4}
+gate_sizes:
+{1: 73, 2: 190}

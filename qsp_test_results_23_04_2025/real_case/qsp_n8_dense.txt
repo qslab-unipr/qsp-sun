@@ -1,0 +1,45 @@
+----- TESTS FOR N=8 DENSE -----
+
+Fidelity: 0.9999999999999976
+
+Trace distance: 1.27675647831893e-15
+Time taken to generate parameters: 1.4144392509479076s.
+Time taken to execute the circuit: 199.84441689797677s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999978
+
+Trace distance: 1.137978600240785e-15
+Time taken to generate parameters: 1.3317897389642894s.
+Time taken to execute the circuit: 158.03772438992746s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999971
+
+Trace distance: 1.5543122344752192e-15
+Time taken to generate parameters: 1.3321493619587272s.
+Time taken to execute the circuit: 165.2563092969358s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999967
+
+Trace distance: 1.8318679906315087e-15
+Time taken to generate parameters: 1.332949752919376s.
+Time taken to execute the circuit: 166.10664804116823s.
+--------------------------------------------------
+
+Fidelity: 0.9999999999999973
+
+Trace distance: 1.2767564783189296e-15
+Time taken to generate parameters: 1.3254792189691216s.
+Time taken to execute the circuit: 165.54356735595502s.
+--------------------------------------------------
+
+num_wires: 24
+num_gates: 1724
+depth: 476
+shots: Shots(total=None)
+gate_types:
+{'RY': 1, 'Adjoint(S)': 7, 'Hadamard': 14, 'CNOT': 1194, 'PhaseShift': 501, 'S': 7}
+gate_sizes:
+{1: 530, 2: 1194}
