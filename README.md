@@ -5,7 +5,6 @@ This repository documents the first known implementation of the algorithm propos
 - the folder called *"Circuits"* contains examples of quantum circuits associated with matrices $\Lambda_n$ for low $n$ and the complete QSP circuit for $n=2$.
 - the folder called *"qsp_package"* includes all the classes and functions needed for the complete implementation of the QSP algorithm in the chosen range $m=2n$. Conceived as an executive package, it can be used to prepare a quantum state (either random or specific) or to run tests. The Python modules it contains will be described in more detail below.
 - the folders called *"qsp_test_results_date"* contains a backup of the test results conducted on a specific date.
-- the folders called *"qsp_test_scripts_date"* contains a backup of the test scripts conducted on a specific date.
 - the folder called *"single_case_results_date"* contains a backup of the results of individual preparations (particular states and lambda matrix verification) on a specific date.
 - **lambda_test.py** is the script to test the implementation of lambda matrices.
 - **main.py** is the main script to easily test the execution of the QSP algorithm.
@@ -74,7 +73,3 @@ It is also possible to directly obtain the output state of the circuit by callin
 #### Calculation of Parameters
 Multiple functions are used to calculate the parameters needed to make all the necessary (parallelized) phase shifts in the computational basis; this process is done using traditional computation and can therefore be executed separately from the quantum computation part. A user can simply call the **qspParameters(_coeff\_vector_, _num\_of\_qubits_)** function to generate $3*(2^n-1)$ $\alpha$ angles (phase shifts parameters) from the desired coefficient vector; these latter angles are then split between the 3 matrices $\Lambda_n$ used to implement (according to the decomposition explained in the original paper by Sun et al.) each $UCG_n$ of the whole traditional QSP ladder structure.
 This procedure also generates the list of global phases and the thoretical matrices used to verify the correct implementation of the $\Lambda_n$ circuit.
-
-#### $\Lambda$ Circuit
-With the current implementation, it is possible to build the circuit associated to the operator $\Lambda_n$, with $n$ as a variable, thanks to the adopted stage structure. 
-The actual script works by initializing the variable $n$ and then randomly generating a complex dense coefficient vector, whose values correspond to the probability amplitudes of the desired final quantum state. Then, the necessary angles are calculated from the initial vector and associated with each computational basis string. Finally, using the *Stage* classes, the quantum circuit is constructed and the final state - in this case, the values of the diagonal of the matrix associated with each multiplexor - can be retrieved.
