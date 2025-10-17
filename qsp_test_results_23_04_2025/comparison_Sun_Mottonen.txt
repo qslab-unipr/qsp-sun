@@ -1,0 +1,285 @@
+----- COMPARISON FOR N=2 -----
+
+Mottonen: wires: 2
+gates: 10
+depth: 8
+shots: Shots(total=None)
+gate_types:
+{'RY': 3, 'CNOT': 4, 'RZ': 3}
+gate_sizes:
+{1: 6, 2: 4}
+
+Sun: wires: 6
+gates: 70
+depth: 60
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 54, 'PhaseShift': 9, 'Adjoint(S)': 1, 'Hadamard': 2, 'S': 1}
+gate_sizes:
+{1: 16, 2: 54}
+----- COMPARISON FOR N=3 -----
+
+Mottonen: wires: 3
+gates: 26
+depth: 22
+shots: Shots(total=None)
+gate_types:
+{'RY': 7, 'CNOT': 12, 'RZ': 7}
+gate_sizes:
+{1: 14, 2: 12}
+
+Sun: wires: 8
+gates: 185
+depth: 129
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 144, 'PhaseShift': 30, 'Adjoint(S)': 2, 'Hadamard': 4, 'S': 2}
+gate_sizes:
+{1: 41, 2: 144}
+----- COMPARISON FOR N=4 -----
+
+Mottonen: wires: 4
+gates: 58
+depth: 52
+shots: Shots(total=None)
+gate_types:
+{'RY': 15, 'CNOT': 28, 'RZ': 15}
+gate_sizes:
+{1: 30, 2: 28}
+
+Sun: wires: 12
+gates: 402
+depth: 222
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 312, 'PhaseShift': 75, 'Adjoint(S)': 3, 'Hadamard': 6, 'S': 3}
+gate_sizes:
+{1: 90, 2: 312}
+----- COMPARISON FOR N=5 -----
+
+Mottonen: wires: 5
+gates: 122
+depth: 114
+shots: Shots(total=None)
+gate_types:
+{'RY': 31, 'CNOT': 60, 'RZ': 31}
+gate_sizes:
+{1: 62, 2: 60}
+
+Sun: wires: 14
+gates: 757
+depth: 360
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 570, 'PhaseShift': 168, 'Adjoint(S)': 4, 'Hadamard': 8, 'S': 4}
+gate_sizes:
+{1: 187, 2: 570}
+----- COMPARISON FOR N=6 -----
+
+Mottonen: wires: 6
+gates: 250
+depth: 240
+shots: Shots(total=None)
+gate_types:
+{'RY': 63, 'CNOT': 124, 'RZ': 63}
+gate_sizes:
+{1: 126, 2: 124}
+
+Sun: wires: 16
+gates: 1430
+depth: 549
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 1050, 'PhaseShift': 357, 'Adjoint(S)': 5, 'Hadamard': 10, 'S': 5}
+gate_sizes:
+{1: 380, 2: 1050}
+----- COMPARISON FOR N=7 -----
+
+Mottonen: wires: 7
+gates: 506
+depth: 494
+shots: Shots(total=None)
+gate_types:
+{'RY': 127, 'CNOT': 252, 'RZ': 127}
+gate_sizes:
+{1: 254, 2: 252}
+
+Sun: wires: 18
+gates: 2685
+depth: 915
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 1920, 'PhaseShift': 738, 'Adjoint(S)': 6, 'Hadamard': 12, 'S': 6}
+gate_sizes:
+{1: 765, 2: 1920}
+----- COMPARISON FOR N=8 -----
+
+Mottonen: wires: 8
+gates: 1018
+depth: 1004
+shots: Shots(total=None)
+gate_types:
+{'RY': 255, 'CNOT': 508, 'RZ': 255}
+gate_sizes:
+{1: 510, 2: 508}
+
+Sun: wires: 24
+gates: 5116
+depth: 1428
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 3582, 'PhaseShift': 1503, 'Adjoint(S)': 7, 'Hadamard': 14, 'S': 7}
+gate_sizes:
+{1: 1534, 2: 3582}
+----- COMPARISON FOR N=9 -----
+
+Mottonen: wires: 9
+gates: 2042
+depth: 2026
+shots: Shots(total=None)
+gate_types:
+{'RY': 511, 'CNOT': 1020, 'RZ': 511}
+gate_sizes:
+{1: 1022, 2: 1020}
+
+Sun: wires: 26
+gates: 9893
+depth: 2283
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 6822, 'PhaseShift': 3036, 'Adjoint(S)': 8, 'Hadamard': 16, 'S': 8}
+gate_sizes:
+{1: 3071, 2: 6822}
+----- COMPARISON FOR N=10 -----
+
+Mottonen: wires: 10
+gates: 4090
+depth: 4072
+shots: Shots(total=None)
+gate_types:
+{'RY': 1023, 'CNOT': 2044, 'RZ': 1023}
+gate_sizes:
+{1: 2046, 2: 2044}
+
+Sun: wires: 28
+gates: 19284
+depth: 3948
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 13140, 'PhaseShift': 6105, 'Adjoint(S)': 9, 'Hadamard': 18, 'S': 9}
+gate_sizes:
+{1: 6144, 2: 13140}
+----- COMPARISON FOR N=11 -----
+
+Mottonen: wires: 11
+gates: 8186
+depth: 8166
+shots: Shots(total=None)
+gate_types:
+{'RY': 2047, 'CNOT': 4092, 'RZ': 2047}
+gate_sizes:
+{1: 4094, 2: 4092}
+
+Sun: wires: 30
+gates: 37897
+depth: 7101
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 25608, 'PhaseShift': 12246, 'Adjoint(S)': 10, 'Hadamard': 20, 'S': 10}
+gate_sizes:
+{1: 12289, 2: 25608}
+----- COMPARISON FOR N=12 -----
+
+Mottonen: wires: 12
+gates: 16378
+depth: 16356
+shots: Shots(total=None)
+gate_types:
+{'RY': 4095, 'CNOT': 8188, 'RZ': 4095}
+gate_sizes:
+{1: 8190, 2: 8188}
+
+Sun: wires: 32
+gates: 74984
+depth: 13374
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 50406, 'PhaseShift': 24531, 'Adjoint(S)': 11, 'Hadamard': 22, 'S': 11}
+gate_sizes:
+{1: 24578, 2: 50406}
+----- COMPARISON FOR N=13 -----
+
+Mottonen: wires: 13
+gates: 32762
+depth: 32738
+shots: Shots(total=None)
+gate_types:
+{'RY': 8191, 'CNOT': 16380, 'RZ': 8191}
+gate_sizes:
+{1: 16382, 2: 16380}
+
+Sun: wires: 34
+gates: 148941
+depth: 25743
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 99786, 'PhaseShift': 49104, 'Adjoint(S)': 12, 'Hadamard': 24, 'S': 12}
+gate_sizes:
+{1: 49155, 2: 99786}
+----- COMPARISON FOR N=14 -----
+
+Mottonen: wires: 14
+gates: 65530
+depth: 65504
+shots: Shots(total=None)
+gate_types:
+{'RY': 16383, 'CNOT': 32764, 'RZ': 16383}
+gate_sizes:
+{1: 32766, 2: 32764}
+
+Sun: wires: 36
+gates: 296632
+depth: 50448
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 198324, 'PhaseShift': 98253, 'Adjoint(S)': 13, 'Hadamard': 26, 'S': 13}
+gate_sizes:
+{1: 98308, 2: 198324}
+----- COMPARISON FOR N=15 -----
+
+Mottonen: wires: 15
+gates: 131066
+depth: 131038
+shots: Shots(total=None)
+gate_types:
+{'RY': 32767, 'CNOT': 65532, 'RZ': 32767}
+gate_sizes:
+{1: 65534, 2: 65532}
+
+Sun: wires: 38
+gates: 591821
+depth: 99693
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 395208, 'PhaseShift': 196554, 'Adjoint(S)': 14, 'Hadamard': 28, 'S': 14}
+gate_sizes:
+{1: 196613, 2: 395208}
+----- COMPARISON FOR N=16 -----
+
+Mottonen: wires: 16
+gates: 262138
+depth: 262108
+shots: Shots(total=None)
+gate_types:
+{'RY': 65535, 'CNOT': 131068, 'RZ': 65535}
+gate_sizes:
+{1: 131070, 2: 131068}
+
+Sun: wires: 48
+gates: 1182006
+depth: 198126
+shots: Shots(total=None)
+gate_types:
+{'RZ': 2, 'RY': 1, 'CNOT': 788784, 'PhaseShift': 393159, 'Adjoint(S)': 15, 'Hadamard': 30, 'S': 15}
+gate_sizes:
+{1: 393222, 2: 788784}
