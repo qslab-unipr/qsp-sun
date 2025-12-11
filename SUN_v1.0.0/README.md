@@ -39,7 +39,7 @@ The project has been implemented using Python 3.12 (Python 3.10 or later should 
 - **QuantumCircuit.printMatrixComparison(self, mat1 : np.ndarray, mat2 : np.ndarray):** calculates the mean squared error between two matrix
   
 ## Usage
-To test the implementation, it is sufficient to run *"main.py"* and follow the instructions printed on the terminal console. It is possible to prepare a random, real positive, real negative or complex, N-qubit quantum state or a specific state by selecting a known quantum state or inserting a $2^n$-element vector of $l_2$-norm = 1.
+To test the implementation, it is sufficient to run *"main.py"* and follow the instructions printed on the terminal console. It is possible to prepare a random, real positive, real negative or complex, $n$-qubit quantum state or a specific state by selecting a known quantum state or inserting a $2^n$-element vector of $l_2$-norm = 1.
 The script will automatically select the simplest version of the circuit (expanded or reduced) based on the input coefficients vector.
 #### Random state example
 ```bash
