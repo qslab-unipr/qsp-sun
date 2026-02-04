@@ -6,6 +6,10 @@ This repository is dedicated to Sun et al.'s QSP algorithm (arXiv:2108.06150) an
 
 Some tests regarding the effectiveness of the SUN algorithm are collected in the folders named, respectively, *qsp_test_results_date* and *single_cases_result_date*.
 
+## License
+This project is licensed under the MIT License – see the LICENSE file for details.
+
+
 
 
 
