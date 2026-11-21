@@ -33,7 +33,7 @@ The project is implemented in Python and uses **PennyLane** for quantum circuit 
 The main dependencies are:
 
 - Python 3.10 or later;
-- PennyLane;
+- PennyLane 0.42.3;
 - NumPy;
 - Matplotlib.
 
