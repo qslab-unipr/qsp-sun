@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository contains a modified implementation of the **OSUN quantum state preparation algorithm**, derived from the optimized version of the algorithm proposed by Sun et al. [1].
+This repository contains a modified implementation of the **OSUN quantum state preparation algorithm** [1], derived from the optimized version of the algorithm proposed by Sun et al. [2].
 
 The original OSUN implementation considers an ancillary register in the range defined by the theoretical construction of the algorithm. The purpose of this project is to investigate an alternative implementation in which the state-preparation procedure is executed **without ancillary qubits**, reducing the total number of qubits required by the quantum circuit.
 
@@ -22,7 +22,8 @@ The main Python modules are described below:
 
 The main objective of this implementation is therefore to study the trade-off between **qubit requirements and circuit complexity** when the ancillary register of the original OSUN construction is removed.
 
-[1] Sun, Xiaoming, et al. *Asymptotically Optimal Circuit Depth for Quantum State Preparation and General Unitary Synthesis*, arXiv e-prints, 2021, arXiv:2108.06150.
+[1] Belli, Giacomo, and Michele Amoretti. *Algebraic reduction to improve an optimally bounded quantum state preparation algorithm*, arXiv:2602.06535 (2026).
+[2] Sun, Xiaoming, et al. *Asymptotically Optimal Circuit Depth for Quantum State Preparation and General Unitary Synthesis*, arXiv:2108.06150 (2021).
 
 ## Requirements
 
