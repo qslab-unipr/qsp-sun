@@ -4,11 +4,11 @@
 
 This repository contains a modified implementation of the **OSUN quantum state preparation algorithm** [1], derived from the optimized version of the algorithm proposed by Sun et al. [2].
 
-The original OSUN implementation considers an ancillary register in the range defined by the theoretical construction of the algorithm. The purpose of this project is to investigate an alternative implementation in which the state-preparation procedure is executed **without ancillary qubits**, reducing the total number of qubits required by the quantum circuit.
+The original OSUN implementation considers an ancillary register in the range defined by the theoretical construction of the algorithm (m=2n). The purpose of this project is to investigate an alternative implementation in which the QSP procedure is executed **without ancillary qubits**, reducing the total number of qubits required by the quantum circuit.
 
-The implementation has been developed in Python using the **PennyLane** library for quantum circuit construction and simulation. The structure of the original project has been preserved as much as possible in order to allow a direct comparison between the reference implementation and the modified version.
+The implementation has been developed in Python using the **PennyLane** library for quantum circuit construction and simulation. The structure of the original project [1] has been preserved as much as possible in order to allow a direct comparison between the reference implementation and the modified version.
 
-In addition to the modules inherited from the original OSUN project, the repository includes dedicated scripts for validating the correctness of the modified state-preparation procedure and for benchmarking its scalability.
+In addition to the modules inherited from the original OSUN project, the repository includes dedicated scripts for validating the correctness of the modified QSP procedure and for benchmarking its scalability.
 
 The main Python modules are described below:
 
